@@ -14,7 +14,6 @@ app.get('/', (request, response) => {
     }
   }).then(function (response) {
     response.send({ response })
-    return {};
   })
 });
 
