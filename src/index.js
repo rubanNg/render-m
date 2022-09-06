@@ -8,7 +8,7 @@ const app = express();
 app.get('/', (request, response) => {
   axios({
     method: 'get',
-    url: `https://videocdn.tv/api/movies?page=${page}`,
+    url: `https://videocdn.tv/api/movies?page=${1}`,
     withCredentials: false,
     headers: {
       API_TOKEN: key,
