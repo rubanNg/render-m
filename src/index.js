@@ -5,7 +5,17 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, "../static")));
 
 app.get('/', (request, response) => {
-  response.render("index.html");
+  axios({
+    method: 'get',
+    url: `https://videocdn.tv/api/movies?page=${page}`,
+    withCredentials: false,
+    headers: {
+      API_TOKEN: key,
+    }
+  }).then(function (response) {
+    response.send({ response })
+    return {};
+  })
 });
 
 app.listen(process.env.PORT, () => console.log(`Run: http://localhost:${process.env.PORT}`));
