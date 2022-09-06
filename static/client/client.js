@@ -6,6 +6,7 @@ function getPage(page) {
     withCredentials: false,
     headers: {
       API_TOKEN: key,
+    }
   }).then(function (response) {
     console.log(response);
     return {};
