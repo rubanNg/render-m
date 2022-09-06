@@ -1,9 +1,11 @@
 const key = "kZakdUbVU9XDi37GdK3PYcdXIVHfGej4";
 function getPage(page) {
-  return axios.get(`https://videocdn.tv/api/movies?page=${page}`, {
+  axios({
+    method: 'get',
+    url: `https://videocdn.tv/api/movies?page=${page}`,
+    withCredentials: false,
     headers: {
-      'API_TOKEN': key,
-    }
+      API_TOKEN: key,
   }).then(function (response) {
     console.log(response);
     return {};
