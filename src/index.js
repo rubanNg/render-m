@@ -3,7 +3,7 @@ const path = require('path')
 const axios = require('axios');
 
 const app = express();
-app.use(express.static(path.resolve(__dirname, "../static")));
+//app.use(express.static(path.resolve(__dirname, "../static")));
 
 app.get('/', (request, response) => {
   axios({
